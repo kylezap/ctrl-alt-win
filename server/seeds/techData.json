@@ -1,35 +1,37 @@
 [
   {
-    "name": "JavaScript"
+    "name": "Halo Infinite",
+    "rating": "T",
+    "yearRelease": "2021",
+    "platform": "Xbox Series X and Series S, Xbox One, PC",
+    "summary": "When all hope is lost and humanity's fate hangs in the balance, the Master Chief is ready to confront the most ruthless foe he's ever faced. Step inside the armor of humanity's greatest hero to experience an epic open-world adventure and explore the massive scale of the Halo ring."
   },
   {
-    "name": "HTML"
+    "name": "Fortnite",
+    "rating": "T",
+    "yearRelease": "2017",
+    "platform": "Mac, PC, PlayStation 4, PlayStation 4 Pro, PlayStation 4 Slim, PlayStation 5, Xbox One, Xbox One S, Xbox One S All-Digital Edition, Xbox One Series X|S, Nintendo Switch, Nintendo Switch Lite",
+    "summary": "Create, play, and battle with friends for free in Fortnite. Be the last player standing in Battle Royale and Zero Build, experience a concert or live event, or discover over a million creator made games, including racing, parkour, zombie survival, and more. Each Fortnite island has an individual age rating so you can find the one that's right for you and your friends. Find it all in Fortnite ... Drop In."
   },
   {
-    "name": "CSS"
+    "name": "Call of Duty: Warzone",
+    "rating": "M",
+    "yearRelease": "2020",
+    "platform": "PlayStation 4, Xbox One, Microsoft Windows",
+    "summary": "Welcome to Call of Duty®: Warzone™, the massive free-to-play combat arena which now features Urzikstan, Rebirth Island and Fortune’s Keep. Prepare to take the battle to a new metropolis in the all-new Urzikstan map, the new big Battle Royale map. Jump in to celebrate the epic return of Rebirth Island and Fortune’s Keep, two Resurgence maps that are sure to excite veterans and newcomers alike. Discover supply boxes and complete contracts to build your arsenal and gain a tactical advantage."
   },
   {
-    "name": "Node.js"
+    "name": "Super Mario Sunshine",
+    "rating": "E",
+    "yearRelease": "2002",
+    "platform": "Nintendo GameCube",
+    "summary": "After being framed for polluting tropical paradise Isle Delfino, Mario is forced to spend his vacation cleaning up the island and tracking down his evil doppelganger."
   },
   {
-    "name": "Express.js"
-  },
-  {
-    "name": "PostgreSQL"
-  },
-  {
-    "name": "MongoDB"
-  },
-  {
-    "name": "React"
-  },
-  {
-    "name": "GraphQL"
-  },
-  {
-    "name": "Sequelize"
-  },
-  {
-    "name": "Handlebars.js"
+    "name": "Punch-Out!!",
+    "rating": "E10",
+    "yearRelease": "2009",
+    "platform": "Nintendo Wii, Nintento Wii U",
+    "summary": "One of the biggest names in boxing returns after a 15-year hiatus. Grab a Wii Remote controller in one hand and a Nunchuk controller in the other and step back into the ring with a modern update of the classic Punch-Out!! Little Mac is back! Everyone’s favorite underdog from the 1980s joins the best of the original Punch-Out!! cast in a modern re-imagination of the series. Players will find familiar names like Glass Joe, King Hippo and trainer Doc Louis. These boxers come to life again in cel-shaded 3-D, complete with hilarious fighting animations and back stories that capture all the fun and flair of the original Punch-Out!! games. The motion-sensitive controls of the Wii console mean that when players throw punches, Little Mac throws punches as well. Additionally, you can control hooks and jabs by combining motion control with control-stick movement. The motion-sensing Wii Remote and Nunchuk controllers turn real-life swings into on-screen punches, so anyone can play. The game can also be played with classic NES-style controls by turning the Wii Remote sideways."
   }
 ]
