@@ -2,9 +2,12 @@ const express = require('express');
 // Uncomment the following code once you have built the queries and mutations in the client folder
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
+const { ApolloServer } = require('@apollo/server');
+const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 
 // Uncomment the following code once you have built the queries and mutations in the client folder
+const { typeDefs, resolvers } = require('./schemas');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
@@ -18,6 +21,10 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
 // Uncomment the following code once you have built the queries and mutations in the client folder
 const startApolloServer = async () => {
@@ -25,8 +32,9 @@ const startApolloServer = async () => {
   
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
-  
+
   // Uncomment the following code once you have built the queries and mutations in the client folder
+  app.use('/graphql', expressMiddleware(server));
   app.use('/graphql', expressMiddleware(server));
 
   // Comment out this code once you have built out queries and mutations in the client folder
@@ -37,6 +45,9 @@ const startApolloServer = async () => {
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
     // Uncomment this code once you have built out queries and mutations in the client folder
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    });
     app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
@@ -57,4 +68,5 @@ const startApolloServer = async () => {
 // });
 
 // Uncomment the following code once you have built the queries and mutations in the client folder
+startApolloServer();
 startApolloServer();
