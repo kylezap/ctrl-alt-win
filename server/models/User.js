@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 
+const gameSchema = require('./Game.js');
+
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -22,7 +24,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
     default: 0,
-  }
+  },
+  savedGames: [gameSchema]
 });
 
 const User = model('User', userSchema);
