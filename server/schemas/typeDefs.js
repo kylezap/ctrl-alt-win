@@ -12,7 +12,7 @@ type Game {
   name: String!
   rating: String
   yearRelease: Int
-  platform: [String]
+  platform: String
   summary: String
 }
 
@@ -32,13 +32,13 @@ input GameInput {
   name: String!
   rating: String
   yearRelease: Int
-  platform: [String]
+  platform: String
   summary: String
 }
 
 type Query {
   getUser(userId: ID!): User
-  searchGames(title: String!): [Game]
+  searchGames(name: String!): [Game]
 }
 
 type Mutation {

@@ -10,8 +10,8 @@ const resolvers = {
       }
       return foundUser;
     },
-    searchGames: async () => {
-      const allGames = await Game.find({});
+    searchGames: async (_, { name }) => {
+      const allGames = await Game.find({name});
       if (!allGames) {
         throw new Error("No games found");
       }
