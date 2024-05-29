@@ -1,4 +1,5 @@
-import { User, Game } from "../models";
+const { User, Game } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {

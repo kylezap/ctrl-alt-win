@@ -16,6 +16,11 @@ type Game {
   summary: String
 }
 
+type Auth {
+  token: String!
+  user: User
+}
+
 type Query {
   getUsers: [User]
   getSingleUser(id: ID!): User
