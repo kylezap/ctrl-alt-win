@@ -38,13 +38,13 @@ input GameInput {
 
 type Query {
   getUser(userId: ID!): User
-  searchGames(title: String!): [Book]
+  searchGames(title: String!): [Game]
 }
 
 type Mutation {
   createUser(input: UserInput!): User
   login(email: String!, password: String!): Auth
-  saveGame(userId: ID!, bookInput: BookInput!): User
+  saveGame(userId: ID!, GameInput: GameInput!): User
   deleteGame(userId: ID!, gameId: ID!): User
 }
 `;

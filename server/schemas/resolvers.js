@@ -26,16 +26,6 @@ const resolvers = {
       return { token, user };
     },
 
-    createGame: async (_, { name, rating, yearRelease, platform, summary }) => {
-      const newGame = Game.create({
-        name,
-        rating,
-        yearRelease,
-        platform,
-        summary,
-      });
-      return newGame;
-    },
     login: async (_, { email, password }) => {
       const user = await User.findOne({
         $or: [{ username: email }, { email: email }],
@@ -68,7 +58,7 @@ const resolvers = {
         throw new Error("User not found");
       }
       return updatedUser;
-    }
+    },
   },
 };
 
