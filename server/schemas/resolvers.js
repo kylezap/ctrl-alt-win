@@ -1,5 +1,4 @@
-const User = require("./models/User");
-const Game = require("./models/Game");
+import { User, Game } from "../models";
 
 const resolvers = {
   Query: {
@@ -34,17 +33,24 @@ const resolvers = {
   },
 
   Mutation: {
-    createUser: (_, { firstName, lastName, username, email }) =>
-      User.create({ firstName, lastName, username, email }),
-    updateUser: (_, { id, firstName, lastName, username, email }) =>
-      User.findByIdAndUpdate(
-        id,
-        { firstName, lastName, username, email },
-        { new: true }
-      ),
-    deleteUser: (_, { id }) => User.findByIdAndRemove(id),
-    createGame: (_, { name, rating, yearRelease, platform, summary }) =>
-      Game.create({ name, rating, yearRelease, platform, summary }),
+    createUser: async (_, { firstName, lastName, username, email }) =>
+      {
+        const user = await User.create({ firstName, lastName, username, email });
+        const token = signToken(user);
+        return { token, user };
+      
+      },
+    // updateUser: (_, { id, firstName, lastName, username, email }) =>
+    //   User.findByIdAndUpdate(
+    //     id,
+    //     { firstName, lastName, username, email },
+    //     { new: true }
+    //   ),
+    // deleteUser: (_, { id }) => User.findByIdAndRemove(id),
+    createGame: async (_, { name, rating, yearRelease, platform, summary }) =>
+      {
+        const newGame = Game.create({ name, rating, yearRelease, platform, summary })
+        return newGame;},
     updateGame: (_, { id, name, rating, yearRelease, platform, summary }) =>
       Game.findByIdAndUpdate(
         id,
