@@ -1,26 +1,36 @@
 const typeDefs = `
-  type Tech {
-    _id: ID!
-    name: String!
-  }
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  username: String!
+  email: String!
+}
 
-  type Matchup {
-    _id: ID!
-    tech1: String!
-    tech2: String!
-    tech1_votes: Int
-    tech2_votes: Int
-  }
+type Game {
+  id: ID!
+  name: String!
+  rating: String!
+  yearRelease: Int
+  platform: String
+  summary: String
+}
 
-  type Query {
-    tech: [Tech]
-    matchups(_id: String): [Matchup]
-  }
+type Query {
+  getUsers: [User]
+  getSingleUser(id: ID!): User
+  getGames: [Game]
+  getSingleGame(id: ID!): Game
+}
 
-  type Mutation {
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
-  }
+type Mutation {
+  createUser(firstName: String!, lastName: String!, username: String!, email: String!): User
+  updateUser(id: ID!, firstName: String, lastName: String, username: String, email: String): User
+  deleteUser(id: ID!): User
+  createGame(name: String!, rating: String!, yearRelease: Int, platform: String, summary: String): Game
+  updateGame(id: ID!, name: String, rating: String, yearRelease: Int, platform: String, summary: String): Game
+  deleteGame(id: ID!): Game
+}
 `;
 
 module.exports = typeDefs;
