@@ -3,10 +3,10 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    getUser: async (_, { id }) => {
-      const foundUser = await User.findById(id);
+    getUser: async (_, { userId }) => {
+      const foundUser = await User.findById(userId);
       if (!foundUser) {
-        throw new Error(`No user found with id: ${id}`);
+        throw new Error(`No user found with id: ${userId}`);
       }
       return foundUser;
     },
@@ -20,8 +20,10 @@ const resolvers = {
   },
 
   Mutation: {
-    createUser: async (_, { firstName, lastName, username, email }) => {
-      const user = await User.create({ firstName, lastName, username, email });
+    createUser: async (_, {input}) => {
+      console.log(input);
+      const user = await User.create(input);
+
       const token = signToken(user);
       return { token, user };
     },

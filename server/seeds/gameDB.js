@@ -1,8 +1,9 @@
-const models = require('../models');
+const models = require('../models/');
 const db = require('../config/connection');
 
 module.exports = async (modelName, collectionName) => {
   try {
+    console.log(models);
     let modelExists = await models[modelName].db.db.listCollections({
       name: collectionName
     }).toArray()
