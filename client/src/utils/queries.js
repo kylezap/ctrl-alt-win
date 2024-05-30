@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const GET_USERS = gql`
-  query GetUsers {
-    getUsers {
+export const GET_USER = gql`
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
       firstName
       lastName
@@ -12,20 +12,8 @@ export const GET_USERS = gql`
   }
 `;
 
-export const GET_SINGLE_USER = gql`
-  query GetSingleUser($id: ID!) {
-    getSingleUser(id: $id) {
-      id
-      firstName
-      lastName
-      username
-      email
-    }
-  }
-`;
-
-export const GET_GAMES = gql`
-  query GetGames {
+export const SEARCH_GAMES = gql`
+  query SearchGames {
     getGames {
       id
       name
@@ -37,15 +25,15 @@ export const GET_GAMES = gql`
   }
 `;
 
-export const GET_SINGLE_GAME = gql`
-  query GetSingleGame($id: ID!) {
-    getSingleGame(id: $id) {
-      id
-      name
-      rating
-      yearRelease
-      platform
-      summary
-    }
-  }
-`;
+// export const GET_SINGLE_GAME = gql`
+//   query GetSingleGame($id: ID!) {
+//     getSingleGame(id: $id) {
+//       id
+//       name
+//       rating
+//       yearRelease
+//       platform
+//       summary
+//     }
+//   }
+// `;
