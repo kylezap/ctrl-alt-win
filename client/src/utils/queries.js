@@ -1,22 +1,51 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_TECH = gql`
-  query tech {
-    tech {
-      _id
-      name
+export const GET_USERS = gql`
+  query GetUsers {
+    getUsers {
+      id
+      firstName
+      lastName
+      username
+      email
     }
   }
 `;
 
-export const QUERY_MATCHUPS = gql`
-  query matchups($_id: String) {
-    matchups(_id: $_id) {
-      _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
+export const GET_SINGLE_USER = gql`
+  query GetSingleUser($id: ID!) {
+    getSingleUser(id: $id) {
+      id
+      firstName
+      lastName
+      username
+      email
+    }
+  }
+`;
+
+export const GET_GAMES = gql`
+  query GetGames {
+    getGames {
+      id
+      name
+      rating
+      yearRelease
+      platform
+      summary
+    }
+  }
+`;
+
+export const GET_SINGLE_GAME = gql`
+  query GetSingleGame($id: ID!) {
+    getSingleGame(id: $id) {
+      id
+      name
+      rating
+      yearRelease
+      platform
+      summary
     }
   }
 `;

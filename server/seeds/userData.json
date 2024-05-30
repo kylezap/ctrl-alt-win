@@ -1,0 +1,55 @@
+[
+    {
+        "firstName": "dummy",
+        "lastName": "user",
+        "username": "dummyuser",
+        "password": "password",
+        "email": "dummy@email.com",
+        "savedGames": [
+            {
+                "name": "Halo Infinite",
+                "rating": "T",
+                "yearRelease": "2021",
+                "platform": "Xbox Series X and Series S, Xbox One, PC",
+                "summary": "When all hope is lost and humanity's fate hangs in the balance, the Master Chief is ready to confront the most ruthless foe he's ever faced. Step inside the armor of humanity's greatest hero to experience an epic open-world adventure and explore the massive scale of the Halo ring."
+              },
+              {
+                "name": "Fortnite",
+                "rating": "T",
+                "yearRelease": "2017",
+                "platform": "Mac, PC, PlayStation 4, PlayStation 4 Pro, PlayStation 4 Slim, PlayStation 5, Xbox One, Xbox One S, Xbox One S All-Digital Edition, Xbox One Series X|S, Nintendo Switch, Nintendo Switch Lite",
+                "summary": "Create, play, and battle with friends for free in Fortnite. Be the last player standing in Battle Royale and Zero Build, experience a concert or live event, or discover over a million creator made games, including racing, parkour, zombie survival, and more. Each Fortnite island has an individual age rating so you can find the one that's right for you and your friends. Find it all in Fortnite ... Drop In."
+              },
+              {
+                "name": "Call of Duty: Warzone",
+                "rating": "M",
+                "yearRelease": "2020",
+                "platform": "PlayStation 4, Xbox One, Microsoft Windows",
+                "summary": "Welcome to Call of Duty®: Warzone™, the massive free-to-play combat arena which now features Urzikstan, Rebirth Island and Fortune’s Keep. Prepare to take the battle to a new metropolis in the all-new Urzikstan map, the new big Battle Royale map. Jump in to celebrate the epic return of Rebirth Island and Fortune’s Keep, two Resurgence maps that are sure to excite veterans and newcomers alike. Discover supply boxes and complete contracts to build your arsenal and gain a tactical advantage."
+              }
+        ]
+    },
+    {
+        "firstName": "test",
+        "lastName": "user",
+        "username": "testuser",
+        "password": "password",
+        "email": "test@email.com",
+        "savedGames": [
+            {
+                "name": "Fortnite",
+                "rating": "T",
+                "yearRelease": "2017",
+                "platform": "Mac, PC, PlayStation 4, PlayStation 4 Pro, PlayStation 4 Slim, PlayStation 5, Xbox One, Xbox One S, Xbox One S All-Digital Edition, Xbox One Series X|S, Nintendo Switch, Nintendo Switch Lite",
+                "summary": "Create, play, and battle with friends for free in Fortnite. Be the last player standing in Battle Royale and Zero Build, experience a concert or live event, or discover over a million creator made games, including racing, parkour, zombie survival, and more. Each Fortnite island has an individual age rating so you can find the one that's right for you and your friends. Find it all in Fortnite ... Drop In."
+              },
+              {
+                "name": "Call of Duty: Warzone",
+                "rating": "M",
+                "yearRelease": "2020",
+                "platform": "PlayStation 4, Xbox One, Microsoft Windows",
+                "summary": "Welcome to Call of Duty®: Warzone™, the massive free-to-play combat arena which now features Urzikstan, Rebirth Island and Fortune’s Keep. Prepare to take the battle to a new metropolis in the all-new Urzikstan map, the new big Battle Royale map. Jump in to celebrate the epic return of Rebirth Island and Fortune’s Keep, two Resurgence maps that are sure to excite veterans and newcomers alike. Discover supply boxes and complete contracts to build your arsenal and gain a tactical advantage."
+              }
+        ]
+    }
+]
