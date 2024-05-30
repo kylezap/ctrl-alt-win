@@ -6,6 +6,7 @@ type User {
   username: String!
   password: String!
   email: String!
+  savedGames: [Game]
 }
 
 type Game {
@@ -22,9 +23,11 @@ type Auth {
 }
 
 input UserInput {
-  username: String!
-  email: String!
-  password: String!
+  firstName: String
+  lastName: String
+  username: String
+  email: String
+  password: String
 }
 
 input GameInput {
@@ -42,7 +45,7 @@ type Query {
 }
 
 type Mutation {
-  createUser(input: UserInput!): User
+  createUser(input: UserInput!) : Auth
   login(email: String!, password: String!): Auth
   saveGame(userId: ID!, GameInput: GameInput!): User
   deleteGame(userId: ID!, gameId: ID!): User
