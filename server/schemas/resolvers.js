@@ -1,4 +1,4 @@
-const { User, Game } = require("../models");
+const { User } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -10,12 +10,22 @@ const resolvers = {
       }
       return foundUser;
     },
-    searchGames: async (_, { name }) => {
-      const allGames = await Game.find({name});
+    searchGames: async (_, { query }) => {
+      const fetchedGames = await fetch(`https://api.rawg.io/api/games?key=e4faca9de17144d280b6332a1b96cfdb&search_precise=call%20of%20duty&search=${query}`);
+      const allGames = await fetchedGames.json();
+      const games = allGames.results.map((game) => ({
+        name: game.name,
+        rating: game.rating,
+        yearRelease: game.released,
+        platform: game.platforms,
+        summary: game.description,
+      }));
+      
+      
       if (!allGames) {
         throw new Error("No games found");
       }
-      return allGames;
+      return games;
     },
   },
 
