@@ -115,7 +115,6 @@ const Matchup = () => {
                   <div class="user"><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/10269.png"></img></div>
                   <div class="input">
                     <form action="">
-                      <div class="input-"
                     </form>
                   </div>
                 </div>
