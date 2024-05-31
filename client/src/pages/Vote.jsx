@@ -22,7 +22,6 @@ const Vote = () => {
   //   } catch (err) {
   //     console.error(err);
   //   }
-  };
 
   return (
     <h1>Hello World</h1>
