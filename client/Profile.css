@@ -11,7 +11,7 @@ body{
 }
 
 .profile-header .profile-header-cover {
-    background-image: url(https://i.pinimg.com/originals/77/f5/7f/77f57fc5d06dc6642b0d96ef200cb550.gif);
+    background-image: url(https://media3.giphy.com/media/2wSblJnaFakthn0BM1/giphy.gif?cid=6c09b952akj8yz947i7k4uwzae9mpd3og9jhkqtj3wtwrq0t&ep=v1_gifs_search&rid=giphy.gif&ct=g);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,5 +20,20 @@ body{
     right: 0;
     top: 0;
     bottom: 0;
+}
+
+.profile-header .profile-header-cover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0,) 0, rgba(0,0,0,.75) 100%)
+}
+
+.profile-header .profile-header-content {
+    color: #fff;
+    padding: 25px;
 }
 
