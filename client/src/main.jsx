@@ -17,13 +17,17 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      }, {
+      }, /*{
         path: '/matchup',
         element: <Matchup />
       }, {
         path: '/matchup/:id',
         element: <Vote />
-      }, {
+      },*/ {
+        path: '/signup',
+        element: <SignUp />
+      },
+      {
         path: '/search',
         element: <SearchGames />
       }
