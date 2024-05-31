@@ -3,10 +3,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
-import Matchup from './pages/Profile';
-import Vote from './pages/Vote';
 import NotFound from './pages/NotFound';
 import SearchGames from './pages/SearchGames.jsx';
+import SignUp from './pages/SignUp.jsx';
+import Profile from './pages/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,15 +17,13 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      }, /*{
-        path: '/matchup',
-        element: <Matchup />
       }, {
-        path: '/matchup/:id',
-        element: <Vote />
-      },*/ {
         path: '/signup',
         element: <SignUp />
+      },
+      {
+        path: '/signup',
+        element: <Profile />
       },
       {
         path: '/search',
