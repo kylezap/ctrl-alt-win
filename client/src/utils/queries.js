@@ -13,16 +13,15 @@ export const GET_USER = gql`
 `;
 
 export const SEARCH_GAMES = gql`
-  query SearchGames {
-    getGames {
-      id
-      name
-      rating
-      yearRelease
-      platform
-      summary
-    }
+query SearchGames($name: String!) {
+  searchGames(name: $name) {
+    name
+    platform
+    rating
+    summary
+    yearRelease
   }
+}
 `;
 
 // export const GET_SINGLE_GAME = gql`
