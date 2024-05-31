@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+// import { Link } from 'react-router-dom';
+// import { useQuery } from '@apollo/client';
 // import { QUERY_MATCHUPS } from '../utils/queries';
 
 const Home = () => {
@@ -10,7 +10,15 @@ const Home = () => {
   // const matchupList = data?.matchups || [];
 
   return (
-    <h1>Hello World</h1>
+    <>
+    <img src="" alt="" />
+    <h1>CTRL-ALT-WIN</h1>
+    <h2>Where gamers meet</h2>
+
+    <a href="/signup"><h2>Signup</h2> </a>
+    <a href="/search"><h2>Search</h2> </a>
+    <a href="/profile"><h2>Profile</h2> </a>
+    </>
     // <div className="card bg-white card-rounded w-50">
     //   <div className="card-header bg-dark text-center">
     //     <h1>Welcome to Tech Matchup!</h1>
