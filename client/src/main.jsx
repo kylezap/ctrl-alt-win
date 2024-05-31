@@ -3,10 +3,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
+import Matchup from './pages/Profile';
 import Vote from './pages/Vote';
 import NotFound from './pages/NotFound';
-import SignUp from './pages/SignUp';
-import Matchup from './pages/Matchup.jsx';
+import SearchGames from './pages/SearchGames.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <SignUp />
       },
+      {
+        path: '/search',
+        element: <SearchGames />
+      }
     ],
   },
 ]);

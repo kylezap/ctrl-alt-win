@@ -10,7 +10,7 @@ const gameSchema = new Schema({
     required: true,
   },
   yearRelease: {
-    type: Number,
+    type: String,
   },
   platform: {
     type: String,

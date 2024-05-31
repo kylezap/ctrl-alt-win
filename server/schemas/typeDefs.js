@@ -12,7 +12,7 @@ type User {
 type Game {
   name: String!
   rating: String
-  yearRelease: Int
+  yearRelease: String
   platform: String
   summary: String
 }

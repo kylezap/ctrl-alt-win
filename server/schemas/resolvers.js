@@ -11,13 +11,13 @@ const resolvers = {
       return foundUser;
     },
     searchGames: async (_, { query }) => {
-      const fetchedGames = await fetch(`https://api.rawg.io/api/games?key=e4faca9de17144d280b6332a1b96cfdb&search_precise=call%20of%20duty&search=${query}`);
+      const fetchedGames = await fetch(`https://api.rawg.io/api/games?key=e4faca9de17144d280b6332a1b96cfdb&search_precise=${query}`);
       const allGames = await fetchedGames.json();
       const games = allGames.results.map((game) => ({
         name: game.name,
         rating: game.rating,
         yearRelease: game.released,
-        platform: game.platforms,
+        // platform: game.platforms.name,
         summary: game.description,
       }));
       
