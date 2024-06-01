@@ -3,7 +3,6 @@
 // import { useMutation, useQuery } from '@apollo/client';
 // import { QUERY_TECH } from '../utils/queries';
 // import { CREATE_MATCHUP } from '../utils/mutations';
-
 const Matchup = () => {
   // const { loading, data } = useQuery(QUERY_TECH);
 
@@ -87,7 +86,7 @@ const Matchup = () => {
                   <span className="pull-right text-muted">20 views</span>
                 </div>
                 <div className="timeline-content">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nam consequuntur nisi voluptatem modi?</p>
+                  <p>Just destroyed once again in Fortnite singles...Come at me bro!!</p>
                 </div>
                 <div className="timeline-likes">
                   <div className="stats-right">
@@ -115,6 +114,13 @@ const Matchup = () => {
                   <div className="user"><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/10269.png"></img></div>
                   <div className="input">
                     <form action="">
+                      <div className="input-group">
+                        <input type="text" className="form-control rounded-corner" placeholder="write a comment...">
+                        </input>
+                        <span className="input-group-btn p-l-10">
+                          <button className="btn btn-primary f-s-12 rounded-corner" type="button">Comment</button>
+                        </span>
+                      </div>
                     </form>
                   </div>
                 </div>
