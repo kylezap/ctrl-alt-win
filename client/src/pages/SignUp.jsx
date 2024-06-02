@@ -1,78 +1,120 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useMutation, useQuery } from '@apollo/client';
-//import { } from '../utils/queries';
+import { Link } from 'react-router-dom';
+
+import { useMutation } from '@apollo/client';
 import { CREATE_USER } from '../utils/mutations';
 
+import Auth from '../utils/auth';
+
 const SignUp = () => {
-  //const { loading, data } = useQuery(QUERY_TECH);
 
-  //const MyFormComponent = () => {
-  const [formData, setFormData] = useState({
-    firstName: 'First Name',
-    lastName: 'Last Name',
-    email: 'Email',
-    username: 'Username',
-    password: 'Password'
-  });
+  const [formState, setFormState] = useState({ firstName: '', lastName: '', username: '', email: '', password: '' });
+  const [createUser, { error, data }] = useMutation(CREATE_USER);
 
-  const [validated] = useState(false);
-
-  const handleTech1Change = (e) => {
-    setFormData({ ...formData, tech1: e.target.value });
-  };
-  /*
-    const handleTech2Change = (e) => {
-      setFormData({ ...formData, tech2: e.target.value });
-    };
-  */
-  let navigate = useNavigate();
-
-  const [createUser, { error }] = useMutation(CREATE_USER);
-
-  const handleInputChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await createUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.createUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      username: '',
+      password: '',
+    });
   };
 
   return (
-    <div>
 
-      <h1>Ctrl-Alt-Win</h1>
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Create Account</h4>
+          <div className="card-body">
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the Login Page.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  className="form-input"
+                  placeholder="First Name"
+                  name="firstName"
+                  type="firstName"
+                  value={formState.firstName}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Last Name"
+                  name="lastName"
+                  type="lastName"
+                  value={formState.lastName}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Username"
+                  name="username"
+                  type="username"
+                  value={formState.username}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn btn-block btn-primary"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
 
-      < input
-        type="text"
-        value={formData.tech1}
-        onChange={(e) => setFormData({ ...formData, tech1: e.target.value })}
-      />
-      <br></br>
-      < input
-        type="text"
-        value={formData.tech2}
-        onChange={(e) => setFormData({ ...formData, tech2: e.target.value })}
-      />
-      <br></br>
-      < input
-        type="text"
-        value={formData.tech3}
-        onChange={(e) => setFormData({ ...formData, tech3: e.target.value })}
-      />
-      <br></br>
-      < input
-        type="text"
-        value={formData.tech4}
-        onChange={(e) => setFormData({ ...formData, tech4: e.target.value })}
-      />
-      <br></br>
-      < input
-        type="text"
-        value={formData.tech5}
-        onChange={(e) => setFormData({ ...formData, tech5: e.target.value })}
-      />
-      <br></br>
-      <button>Create Account</button>
-    </div>
-
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 export default SignUp;
