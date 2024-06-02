@@ -20,6 +20,7 @@ query SearchGames($name: String!) {
     rating
     summary
     yearRelease
+    background_image
   }
 }
 `;

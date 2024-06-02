@@ -17,6 +17,9 @@ const gameSchema = new Schema({
   },
   summary: {
     type: String,
+  },
+  background_image: {
+    type: String,
   }
 });
 

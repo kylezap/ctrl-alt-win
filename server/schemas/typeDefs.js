@@ -15,6 +15,7 @@ type Game {
   yearRelease: String
   platform: String
   summary: String
+  background_image: String
 }
 
 type Auth {

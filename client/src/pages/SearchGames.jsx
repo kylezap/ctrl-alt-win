@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
 import { useLazyQuery } from "@apollo/client";
 // import { SAVE_BOOK } from '../utils/mutations';
@@ -12,14 +12,19 @@ const SearchGames = () => {
   const [searchInput, setSearchInput] = useState("");
   //Handlers
   const [searchGames, { loading, error, data }] = useLazyQuery(SEARCH_GAMES);
-  const game = data?.searchGames || [];
+  // const game = data?.searchGames || [];
 
-  useEffect
+  
   useEffect(() => {
     if (data) {
       setSearchedGames(data.searchGames);
+      
     }
   }, [data]);
+
+  useEffect(() => {
+    console.log(searchedGames);
+  }, [searchedGames]);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -28,23 +33,25 @@ const SearchGames = () => {
     }
     try {
       await searchGames({ variables: { name: searchInput } });
-      console.log(searchedGames);
-      setSearchInput("");  
+  
+      setSearchInput(""); 
     } catch (err) {
       console.error(err);
-    }
+    } 
+    
   };
-console.log(searchedGames);
+
   // const handleSaveGame = async (gameId) => {
 
   //Output
   return (
     <>
-      <div className="text-light bg-dark p-5">
-        <Container>
-          <h1>Search for Games!</h1>
+      <h1>Search for Games!</h1>
+      <div className="text-light bg-dark p-4 col-10 d-flex align-items-center">
+        <Container className="align-items-center">
+          
           <Form onSubmit={handleFormSubmit}>
-            <Row>
+            <Row className="flex-row">
               <Col xs={12} md={8}>
                 <Form.Control
                   name="searchInput"
@@ -53,6 +60,7 @@ console.log(searchedGames);
                   type="text"
                   size="lg"
                   placeholder="Search for a game"
+                  className="form-control-lg"
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -65,7 +73,7 @@ console.log(searchedGames);
         </Container>
       </div>
 
-      <Container>
+      <Container style={{color: "white"}}>
         <h2 className="pt-5">
           {searchedGames.length
             ? `Viewing ${searchedGames.length} results:`
@@ -76,18 +84,19 @@ console.log(searchedGames);
             return (
               <Col md="4" key={game.name}>
                 <Card border="dark">
-                  {/* {data.image ? (
+                  {game.background_image ? (
                     <Card.Img
-                      src={data.image}
-                      alt={`The cover for ${data.name}`}
+                      src={game.background_image}
+                      alt={`The cover for ${game.name}`}
                       variant="top"
+                      style={{ width: "100%", height: "15vw", } }
                     />
-                  ) : null} */}
+                  ) : null}
                   <Card.Body>
                     <Card.Title>{game.name}</Card.Title>
-                    <p className="small">Name: {game.name}</p>
+                    <p className="small">Rating: {game.rating}</p>
                     <Card.Text>{game.summary}</Card.Text>
-                    {/* {Auth.loggedIn() && (
+                    {Auth.loggedIn() && (
                     <Button
                       disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
                       className='btn-block btn-info'
@@ -96,7 +105,7 @@ console.log(searchedGames);
                         ? 'This game has already been saved!'
                         : 'Save this Game!'}
                     </Button>
-                  )} */}
+                  )}
                   </Card.Body>
                 </Card>
               </Col>
