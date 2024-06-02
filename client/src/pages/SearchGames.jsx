@@ -12,7 +12,7 @@ const SearchGames = () => {
   const [searchInput, setSearchInput] = useState("");
   //Handlers
   const [searchGames, { loading, error, data }] = useLazyQuery(SEARCH_GAMES);
-  const game = data?.searchGames || [];
+  // const game = data?.searchGames || [];
 
   useEffect
   useEffect(() => {
@@ -76,13 +76,13 @@ console.log(searchedGames);
             return (
               <Col md="4" key={game.name}>
                 <Card border="dark">
-                  {/* {data.image ? (
+                  {data.image ? (
                     <Card.Img
-                      src={data.image}
-                      alt={`The cover for ${data.name}`}
+                      src={game.background_image}
+                      alt={`The cover for ${game.name}`}
                       variant="top"
                     />
-                  ) : null} */}
+                  ) : null}
                   <Card.Body>
                     <Card.Title>{game.name}</Card.Title>
                     <p className="small">Name: {game.name}</p>

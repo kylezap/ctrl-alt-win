@@ -10,8 +10,8 @@ const resolvers = {
       }
       return foundUser;
     },
-    searchGames: async (_, { query }) => {
-      const fetchedGames = await fetch(`https://api.rawg.io/api/games?key=e4faca9de17144d280b6332a1b96cfdb&search_precise=${query}`);
+    searchGames: async (_, { name }) => {
+      const fetchedGames = await fetch(`https://api.rawg.io/api/games?key=e4faca9de17144d280b6332a1b96cfdb&search=${name}`);
       const allGames = await fetchedGames.json();
       const games = allGames.results.map((game) => ({
         name: game.name,
@@ -19,6 +19,7 @@ const resolvers = {
         yearRelease: game.released,
         // platform: game.platforms.name,
         summary: game.description,
+        background_image: game.background_image
       }));
       
       
