@@ -81,7 +81,7 @@ const Matchup = () => {
               </div>
               <div className="timeline-body">
                 <div className="timeline-header">
-                  <span className="userimage"><img src="https://images.theconversation.com/files/521751/original/file-20230419-18-hg9dc3.jpg?ixlib=rb-4.1.0&rect=398%2C2%2C1206%2C991&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip" alt= ""></img></span>
+                  <span className="userimage"><img src="https://media.tenor.com/-pqqVCuYlBEAAAAM/agent-peely-work-it-emote.gif" alt= ""></img></span>
                   <span className="username"><a href="javascript:;">Test User</a><small></small></span>
                   <span className="pull-right text-muted">20 views</span>
                 </div>
@@ -111,7 +111,7 @@ const Matchup = () => {
                   <a href="javascript:;" className="m-r-15 text-inverse-lighter"><i className="fa fa-share fa-fw fa-lg m-r-3"></i>Share</a>
                 </div>
                 <div className="timeline-comment-box">
-                  <div className="user"><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/10269.png"></img></div>
+                  <div className="user"><img src="https://media.tenor.com/sQPNk_VgG-cAAAAd/dancing-peely-peely-fortnite.gif"></img></div>
                   <div className="input">
                     <form action="">
                       <div className="input-group">
@@ -124,6 +124,84 @@ const Matchup = () => {
                     </form>
                   </div>
                 </div>
+              </div>
+            </li>
+            <li>
+              <div className="timeline-time">
+                <span className="date">yesterday</span>
+                <span className="time">20:17</span>
+              </div>
+              <div className="timeline-icon">
+                <a href="javascript:;">&nbsp;</a>
+              </div>
+              <div className="timeline-body">
+                <div className="timeline-header">
+                  <span className="userimage"><img src="https://media3.giphy.com/media/MBZuMSqKlqHC4lDIci/200.gif" alt=""></img></span>
+                  <span className="username">Gold Fish</span>
+                  <span className="pull-right text-muted">82 Views</span>
+                </div>
+                <div className="timeline-content">
+                  <p>Squad Up My Guy!!</p>
+                </div>
+                <div className="timeline-footer">
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a> 
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="timeline-time">
+                <span className="date">1 June 2024</span>
+                <span className="time">01:22</span>
+              </div>
+              <div className="timeline-icon">
+                <a href="javascript:;">&nbsp;</a>
+              </div>
+              <div className="timeline-body">
+                <div className="timeline-header">
+                  <span className="userimage"><img src="https://www.icegif.com/wp-content/uploads/icegif-6745.gif" alt=""></img></span>
+                  <span className="username">Get Iced!!</span>
+                  <span className="pull-right text-muted">1,282 Views</span>
+                </div>
+                <div className="timeline-content">
+                  <p className="lead">
+                    <i className="fa fa-quote-left fa-fw pull-left"></i>
+                    I'm down if you guys are?
+                  </p>
+                </div>
+                <div className="timeline-footer">
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a> 
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="timeline-time">
+                <span className="date">2 June 2024</span>
+                <span className="time">20:43</span>
+              </div>
+              <div className="timeline-icon">
+                <a href="javascript:;">&nbsp;</a>
+              </div>
+              <div className="timeline-body">
+                <div className="timeline-header">
+                  <span className="userimage"><img src="https://media.tenor.com/ov1bhqF8mzUAAAAd/rick-sanchez-fortnite.gif" alt=""></img></span>
+                  <span className="username">Rickity Rick!!</span>
+                  <span className="pull-right text-muted">6 Views</span>
+                </div>
+                <div className="timeline-content">
+                  <p className="lead">
+                    <i className="fa fa-quote-left fa-fw pull-left"></i>
+                    Heeeeeey!! What about me?
+                  </p>
+                </div>
+                <div className="timeline-footer">
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a> 
+                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
+              </div>
               </div>
             </li>
           </ul>
