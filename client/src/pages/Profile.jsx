@@ -91,7 +91,7 @@ const Matchup = () => {
                 <div className="timeline-likes">
                   <div className="stats-right">
                     <span className="stats-text">250 Shares</span>
-                    <span className="stats-text">21 Comments</span>
+                    <span className="stats-text">3 Comments</span>
                   </div>
                   <div className="stats">
                     <span className="fa-stack fa-fw stats-icon">
