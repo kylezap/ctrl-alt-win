@@ -47,12 +47,12 @@ const SearchGames = () => {
   return (
     <>
       <h1>Search for Games!</h1>
-      <div className="text-light bg-dark p-4 col-10 d-flex align-items-center">
-        <Container className="align-items-center">
+      <div className="text-light bg-dark p-4 col-10 d-flex align-items-center justify-content-between">
+        <Container>
           
           <Form onSubmit={handleFormSubmit}>
-            <Row className="flex-row">
-              <Col xs={12} md={8}>
+            <Row className="flex-row ">
+              <Col >
                 <Form.Control
                   name="searchInput"
                   value={searchInput}
@@ -63,7 +63,7 @@ const SearchGames = () => {
                   className="form-control-lg"
                 />
               </Col>
-              <Col xs={12} md={4}>
+              <Col >
                 <Button type="submit" variant="success" size="lg">
                   Submit Search
                 </Button>
@@ -94,18 +94,19 @@ const SearchGames = () => {
                   ) : null}
                   <Card.Body>
                     <Card.Title>{game.name}</Card.Title>
-                    <p className="small">Rating: {game.rating}</p>
+                    {/* <p className="small">Rating: {game.rating}</p> */}
                     <Card.Text>{game.summary}</Card.Text>
-                    {Auth.loggedIn() && (
+                    {/* {Auth.loggedIn() && ( */}
                     <Button
-                      disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
+                      // disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
                       className='btn-block btn-info'
-                      onClick={() => handleSaveGame(game.gameId)}>
-                      {savedGameIds?.some((savedGameId) => savedGameId === game.gameId)
+                      // onClick={() => handleSaveGame(game.gameId)}
+                      >
+                      {/* {savedGameIds?.some((savedGameId) => savedGameId === game.gameId)
                         ? 'This game has already been saved!'
-                        : 'Save this Game!'}
+                        : 'Save this Game!'} */}Save Game
                     </Button>
-                  )}
+                  {/* )} */}
                   </Card.Body>
                 </Card>
               </Col>
