@@ -9,7 +9,7 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build",
-    "test": "node .github/setup.js"
+    "test": "node .github/setup.js; node .github/setup.js"
   },
   "author": "",
   "license": "ISC",
