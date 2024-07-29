@@ -11,7 +11,7 @@ const SearchGames = () => {
   const [searchedGames, setSearchedGames] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   //Handlers
-  const [searchGames, { loading, error, data }] = useLazyQuery(SEARCH_GAMES);
+  const [searchGames, { loading, data }] = useLazyQuery(SEARCH_GAMES);
   // const game = data?.searchGames || [];
 
   
